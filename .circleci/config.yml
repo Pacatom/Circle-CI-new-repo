@@ -10,5 +10,6 @@ workflows:
   welcome:
 # Run the welcome/run job in its own container
     jobs:
-      - welcome/run
-          working_directory: cypress
+       - cypress/run:
+             install-command: 'npm install'
+             start: 'npm run cy:pipeline'
